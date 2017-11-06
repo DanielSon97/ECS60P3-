@@ -326,7 +326,6 @@ int BinarySearchTreeX<Comparable>::height(BinaryNodeX<Comparable> *t) const
     else {
         return BTreeRight;
     }
-  return 0;  // to be written by student
 }
 
 template <class Comparable>
@@ -339,8 +338,10 @@ int BinarySearchTreeX<Comparable>::sum() const
 template <class Comparable>
 int BinarySearchTreeX<Comparable>::sum(BinaryNodeX<Comparable> *t) const
 {
-  //return addSum(t);
-  return 0; // to be written by student
+  if (!t) {
+      return 0;
+  }
+  return (t->element + sum(t->left) + sum(t->right))
 }
 
 template <class Comparable>
@@ -377,13 +378,3 @@ int BinarySearchTreeX<Comparable>::deepestFull(BinaryNodeX<Comparable> *t) const
   return 0;  // to be written by student
 }
 
-/*int addSum() 
-{
-    if (t == NULL) 
-    {
-        return 0;
-    }
-    return (t->element + addSum(t->left) + addSum(t->right))
-}
-
-*/
